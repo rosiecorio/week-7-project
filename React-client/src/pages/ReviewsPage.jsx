@@ -6,7 +6,7 @@ export default function ReviewsPage() {
 
     useEffect(() => {
         async function fetchReviews() {
-            const response = await fetch('http://localhost:8080/reviews')
+            const response = await fetch('http://localhost:8080/games')
             const data = await response.json()
             setReviews(data)
         }
@@ -18,7 +18,7 @@ export default function ReviewsPage() {
         <>
             <h1>Reviews</h1>
             {reviews.map(item => (
-                <div key={item}>
+                <div key={item.id}>
                     <h4>{item.title}</h4>
                     <p>{item.review}</p>
                 </div>

@@ -18,7 +18,7 @@ export default function GamesPage() {
         <>
             <h1>Reviews</h1>
             {games.map(item => (
-                <div key={item}>
+                <div key={item.title}>
                     <h2>{item.title}</h2>
                 </div>
             ))}
