@@ -20,15 +20,17 @@ export default function ReviewsPage() {
     return (
         <>
             <h1>Reviews</h1>
+            <section className="reviewContent">
+                {reviews.map(item => (
+                    <div key={item.id} className="reviewDiv">
+                        <DeleteButton id={item.id}/>
+                        <h3>{item.title}</h3>
+                        <p>{item.name}</p>
+                        <p>{item.review}</p>
+                    </div>
+                ))}
+            </section>
             <ReviewForm />
-            {reviews.map(item => (
-                <div key={item.id}>
-                    <DeleteButton id={item.id}/>
-                    <h3>{item.title}</h3>
-                    <p>{item.name}</p>
-                    <p>{item.review}</p>
-                </div>
-            ))}
         </>
     )
 }

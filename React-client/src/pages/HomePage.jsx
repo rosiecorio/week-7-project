@@ -4,14 +4,14 @@ import ReviewForm from "./ReviewForm"
 export default function HomePage() {
     return (
         <>
-        <div className="landingButtons">
-            <section className="gamesContainer">
+        <section className="landingButtons">
+            <div className="gamesContainer">
             <Link to="/games" className="gamesLink">Games</Link>
-            </section>
-            <section className="reviewsContainer">
+            </div>
+            <div className="reviewsContainer">
             <Link to="/reviews" className="reviewsLink">Reviews</Link>
-            </section>
-        </div>
+            </div>
+        </section>
         <section className="homeForm">
             <ReviewForm />
         </section>

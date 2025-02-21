@@ -2,8 +2,8 @@
 
 body {
     margin: 0;
-    background: rgb(213, 88, 96);
-    color: rgb(24, 5, 5);
+    background: rgb(178, 114, 243);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 a {
     align-items: center;
     height: 60vh;
     border: 5px solid black;
-    background-color: white;
+    background-color: rgb(150, 64, 220);
 }
 
 .landingButtons a {
@@ -31,27 +31,37 @@ h1 a {
     text-decoration: none;
     color: black;
     padding: 10px;
-    background-color: rgb(239, 62, 73);
+    background-color: rgb(198, 201, 238);
+    border-radius: 10px;
 }
 
 .gamesLink {
     border: solid 2px black;
-    width: 200px;
 }
 
-/* .gamesContainer {
+.gamesContainer {
     border: solid 2px black;
-} */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./src/assets/gamesbackground.jpg');
+}
 
 .reviewsLink {
     border: solid 2px black;
 }
 
-/* .reviewsContainer {
+.reviewsContainer {
     border: solid 2px black;
-    width: 100vw;
-    height: 30vh;
-} */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./src/assets/reviewsbackground.avif');
+}
 /* review form styling */
 
 .homeForm {
@@ -68,7 +78,7 @@ h1 a {
     padding: 15px;
     margin: 10px;
     gap: 10px;
-    background-color: rgb(240, 80, 80);
+    background-color: rgb(155, 78, 227);
     width: 50vw;
     border-radius: 10px;
     border: solid 2px black;
@@ -80,5 +90,40 @@ h1 a {
 }
 
 /* end of form styling */
+
+/* start of games page styling */
+
+.displayedGames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.displayedGameLink {
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
+
+/* start of reviews page styling */
+.reviewDiv {
+    background-color: rgb(131, 179, 221);
+    border-radius: 20px;
+    padding: 7px;
+    border: solid black 2px;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.reviewDiv button{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-weight: bold;
+    border: 1px hidden;
+    border-radius: 5px;
+    background: none;
+}
 
 /* END OF HOME PAGE STYLING */

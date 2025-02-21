@@ -21,8 +21,8 @@ export default function GamesPage() {
 
     let gamesArray = 
         games.map(item => (
-            <div key={item.title}>
-                <Link to={`/games/${item.id}`}>{item.title}</Link>
+            <div key={item.title} className="displayedGames">
+                <Link to={`/games/${item.id}`} className="displayedGameLink">{item.title}</Link>
             </div>
         ))
 
