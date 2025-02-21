@@ -35,11 +35,27 @@ app.get('/games', async (request, response) => {
 //request a specific game, with title and review
 
 app.get('/games/:id', async (request, response) => {
-    try {
-        const gamesInfo = (await db.query(`SELECT * FROM games WHERE id = $1`, [request.params.id]))
-        response.status(200).json(gamesInfo)
+    const {includes_genres} = request.query
+    const {id} = request.params
+    console.log(id)
+    
+    try{
+        if(includes_genres === 'true') {
+            const gamesInfoWithGenres = (await db.query(`SELECT games.*, array_agg(genres.name) AS genres
+                FROM games
+                LEFT JOIN
+                games_genres ON games.id = games_genres.game_id
+                LEFT JOIN
+                genres ON games_genres.genre_id = genres.id
+                WHERE games.id = $1
+                GROUP BY games.id`, [id])).rows[0]
+                res.status(200).json(gamesInfoWithGenres)
+        } else {
+            const gamesInfo = (await db.query(`SELECT * FROM games WHERE id = $1`, [request.params.id]))
+            response.status(200).json(gamesInfo)
+        }
     } catch (error) {
-        response.status(500).send(error)
+        response.status(500).send(error.message)
     }
 })
 
@@ -65,22 +81,36 @@ app.get('/titles', async (request, response) => {
     }
 })
 
+//shows all genres
+
+app.get('/genres', async (request, response) => {
+    try {
+        const genreInfo = (await db.query(`SELECT name FROM  genres`)).rows
+        response.status(200).json(genreInfo)
+    } catch (error) {
+        response.status(500).send(error.message)
+    }
+})
+
 //add a new game with title and review
 
 app.post('/games', async (request, response) => {
     try {
         const gameTitle = request.body.title
         const gameReview = request.body.review
-        const data = await db.query(`INSERT INTO games (title, values) VALUES ($1, $2)`, [gameTitle, gameReview])
+        const userName = request.body.name
+        const data = await db.query(`INSERT INTO games (title, review, name) VALUES ($1, $2, $3)`, [gameTitle, gameReview, userName])
+        console.log(data)
         response.json(data)
     } catch (error) {
+        console.log(error.message)
         response.status(500).send(error.message)
     }
 })
 
 //delete a game
 
-app.delete('/games:id', async (request, response) => {
+app.delete('/games/:id', async (request, response) => {
     try {
         const deletedGame = await db.query(`DELETE FROM games WHERE id=$1`, [request.params.id])
         response.status(200).json({game: deletedGame})

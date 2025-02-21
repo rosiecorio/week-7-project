@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import ReviewForm from "./ReviewForm"
+import DeleteButton from "./DeleteButton"
+
 
 export default function ReviewsPage() {
 
@@ -12,14 +15,17 @@ export default function ReviewsPage() {
         }
 
         fetchReviews()
-    })
+    }, [])
 
     return (
         <>
             <h1>Reviews</h1>
+            <ReviewForm />
             {reviews.map(item => (
                 <div key={item.id}>
-                    <h4>{item.title}</h4>
+                    <DeleteButton id={item.id}/>
+                    <h3>{item.title}</h3>
+                    <p>{item.name}</p>
                     <p>{item.review}</p>
                 </div>
             ))}

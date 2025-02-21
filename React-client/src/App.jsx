@@ -3,6 +3,8 @@ import './App.css'
 import GamesPage from './pages/GamesPage'
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
 import ReviewsPage from './pages/ReviewsPage'
+import HomePage from './pages/HomePage'
+import EachGame from './pages/EachGame'
 
 export default function App() {
 
@@ -10,17 +12,11 @@ export default function App() {
     <>
       <BrowserRouter>
         <h1><Link to="/">SideQuest</Link></h1>
-          <div className="landingButtons">
-            <section className="gamesContainer">
-              <Link to="/games" className="gamesLink">Games</Link>
-            </section>
-            <section className="reviewsContainer">
-              <Link to="/reviews" className="reviewsLink">Reviews</Link>
-            </section>
-          </div>
         {/* <ReviewForm /> */}
         <Routes >
+          <Route path={"/"} element={<HomePage />} />
           <Route path={"/games"} element={<GamesPage />} />
+          <Route path={"/games/:id"} element={<EachGame />} />
           <Route path={"/reviews"} element={<ReviewsPage />} />
         </Routes>
       </BrowserRouter>
@@ -28,5 +24,18 @@ export default function App() {
     </>
   )
 }
+
+/* 
+GOALS
+
+-Style landing page
+-style games page
+-style reviews page
+
+-create 'sort by' button on games page for genre and alphabetical (group game.title)
+-create 'sort by' button on reviews page for name, game title and genre
+
+-use 3rd part api for games images?
+*/
 
 

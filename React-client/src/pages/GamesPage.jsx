@@ -1,25 +1,28 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
+import { Link } from "react-router-dom"
 
 export default function GamesPage() {
 
+    
     const [games, setGames] = useState([])
 
     useEffect(() => {
         async function fetchGames() {
-            const response = await fetch('http://localhost:8080/titles')
+            const response = await fetch('http://localhost:8080/games')
             const data = await response.json()
             setGames(data)
         }
 
         fetchGames()
-    })
+    }, [])
 
     return (
         <>
-            <h1>Reviews</h1>
+            <h1>Games</h1>
+            <button className="sortByButton">Sort By</button>
             {games.map(item => (
                 <div key={item.title}>
-                    <h2>{item.title}</h2>
+                    <Link to={`/games/${item.id}`}>{item.title}</Link>
                 </div>
             ))}
         </>
