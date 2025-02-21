@@ -5,13 +5,13 @@ export default function EachGame() {
     
     const [gameInfo, setGameInfo] = useState([])
 
-    const {id} = useParams
+    const {id} = useParams()
 
     useEffect(() => {
         async function fetchGame() {
             const response = await fetch (`http://localhost:8080/games/${id}?include_genres=true`)
             const data = await response.json()
-            setGameInfo(data)
+            setGameInfo(data.rows[0])
         }
 
         fetchGame()
@@ -19,7 +19,7 @@ export default function EachGame() {
     
     return (
         <>
-            <div>
+            <div className="eachGameContent">
                 <h1>individual game</h1>
                 <h2>{gameInfo.title}</h2>
                 <p>{gameInfo.review}</p>

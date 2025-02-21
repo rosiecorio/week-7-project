@@ -1,5 +1,6 @@
 import { useEffect, useState} from "react"
 import { Link } from "react-router-dom"
+import SortByMenu from "./SortByMenu"
 
 export default function GamesPage() {
 
@@ -16,15 +17,24 @@ export default function GamesPage() {
         fetchGames()
     }, [])
 
+//CREATING SORT BY BUTTON
+
+    let gamesArray = 
+        games.map(item => (
+            <div key={item.title}>
+                <Link to={`/games/${item.id}`}>{item.title}</Link>
+            </div>
+        ))
+
+    console.log(gamesArray)
+
+//END OF CREATING SORT BUTTON
+
     return (
         <>
             <h1>Games</h1>
-            <button className="sortByButton">Sort By</button>
-            {games.map(item => (
-                <div key={item.title}>
-                    <Link to={`/games/${item.id}`}>{item.title}</Link>
-                </div>
-            ))}
+            <SortByMenu gamesArray={gamesArray}/>
+            {gamesArray}
         </>
     )
 }

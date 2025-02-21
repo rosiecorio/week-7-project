@@ -12,7 +12,6 @@ export default function App() {
     <>
       <BrowserRouter>
         <h1><Link to="/">SideQuest</Link></h1>
-        {/* <ReviewForm /> */}
         <Routes >
           <Route path={"/"} element={<HomePage />} />
           <Route path={"/games"} element={<GamesPage />} />
@@ -34,6 +33,8 @@ GOALS
 
 -create 'sort by' button on games page for genre and alphabetical (group game.title)
 -create 'sort by' button on reviews page for name, game title and genre
+
+-Create individual games page for each game added. -- DONE
 
 -use 3rd part api for games images?
 */

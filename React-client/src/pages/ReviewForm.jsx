@@ -33,16 +33,10 @@ export default function ReviewForm() {
     //when user submits form, send values to database table?
     
     return (
-        <form onSubmit={handleSubmit} id="reviewForm">
-            <label htmlFor="name">Name:</label>
-            <input onChange={handleChange} name="name" type="text" required/>
-
-            <label htmlFor="title">Game Title:</label>
-            <input onChange={handleChange} name="title" type="text" required/>
-
-            <label htmlFor="review">Review:</label>
-            <input onChange={handleChange} name="review"type="text" required/>
-
+        <form onSubmit={handleSubmit} id="reviewForm" className="reviewForm">
+            <input className="nameInput" placeholder="Name.." onChange={handleChange} name="name" type="text" required/>
+            <input className="titleInput" placeholder="Game title.." onChange={handleChange} name="title" type="text" required/>
+            <textarea className="reviewInput" id="review" name="review" rows="6" cols="25" placeholder="Your review.." onChange={handleChange}></textarea>
             <button type="submit">Submit</button>
         </form>
     )

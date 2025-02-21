@@ -12,7 +12,7 @@ export default function HomePage() {
             <Link to="/reviews" className="reviewsLink">Reviews</Link>
             </section>
         </div>
-        <section>
+        <section className="homeForm">
             <ReviewForm />
         </section>
         </>

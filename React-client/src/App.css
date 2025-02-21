@@ -1,3 +1,5 @@
+/* HOME PAGE STYLING */
+
 body {
     margin: 0;
     background: rgb(213, 88, 96);
@@ -16,10 +18,10 @@ h1 a {
 
 .landingButtons {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 70vh;
+    height: 60vh;
     border: 5px solid black;
     background-color: white;
 }
@@ -34,8 +36,49 @@ h1 a {
 
 .gamesLink {
     border: solid 2px black;
+    width: 200px;
 }
+
+/* .gamesContainer {
+    border: solid 2px black;
+} */
 
 .reviewsLink {
     border: solid 2px black;
 }
+
+/* .reviewsContainer {
+    border: solid 2px black;
+    width: 100vw;
+    height: 30vh;
+} */
+/* review form styling */
+
+.homeForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+.reviewForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    margin: 10px;
+    gap: 10px;
+    background-color: rgb(240, 80, 80);
+    width: 50vw;
+    border-radius: 10px;
+    border: solid 2px black;
+    transform: scale(0.9);
+}
+
+.nameInput {
+    width: 8em;
+}
+
+/* end of form styling */
+
+/* END OF HOME PAGE STYLING */
