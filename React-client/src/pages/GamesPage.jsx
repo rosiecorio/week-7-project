@@ -32,9 +32,11 @@ export default function GamesPage() {
 
     return (
         <>
-            <h1>Games</h1>
-            <SortByMenu gamesArray={gamesArray}/>
-            {gamesArray}
+            <div className="gameContent">
+                <SortByMenu gamesArray={gamesArray}/>
+                <h1>Games</h1>
+                {gamesArray}
+            </div>
         </>
     )
 }
