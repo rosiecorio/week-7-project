@@ -45,8 +45,12 @@ h1 a {
     border: white solid 1px;
 }
 
-.gamesLink {
+.homeLink {
     border: solid 2px black;
+}
+
+.homeLink:hover {
+    transform: scale(1.2);
 }
 
 .gamesContainer {
@@ -57,10 +61,6 @@ h1 a {
     justify-content: center;
     align-items: center;
     background-image: url('./src/assets/gamesbackground.jpg');
-}
-
-.reviewsLink {
-    border: solid 2px black;
 }
 
 .reviewsContainer {
@@ -82,6 +82,9 @@ h1 a {
     align-items: center;
     background-image: url('./src/assets/addbackground.webp');
 }
+
+/* END OF HOME PAGE STYLING */
+
 /* review form styling */
 
 .homeForm {
@@ -94,11 +97,11 @@ h1 a {
 .reviewForm {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start;    
     padding: 15px;
     margin: 10px;
     gap: 10px;
-    background-color: rgb(71, 70, 72);
+    background-color: rgb(16, 15, 16);
     width: 50vw;
     border-radius: 10px;
     border: solid 2px black;
@@ -117,12 +120,36 @@ h1 a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(95, 160, 121);
+    border-radius: 20px;
+    width: 90vw;
+    border: white solid 2px;
+}
+
+.displayedGames:hover {
+    transform: scale(1.1);
 }
 
 .displayedGameLink {
     text-decoration: none;
     font-size: 30px;
     color: white;
+}
+
+.gamesDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gameContent {
+    height: 80vh;
+    width: 100vw;
+    background-image: url(./assets/gamesbackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .gameContent a {
@@ -132,11 +159,37 @@ h1 a {
 .gameContent h1 {
     color: white;
     margin-bottom: 10px;
+    text-decoration: underline;
 }
+
+.eachGameContent {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    background-color: rgb(95, 160, 121);
+    border: 2px solid white;
+    transform: scaleY(1.2);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.eachGameContent p {
+    text-align: center;
+}
+
+.backButton {
+    text-align: center;
+    width: 100vw;
+    margin: 40px 0;
+    transform: scale(1.5);
+}
+
 
 /* start of reviews page styling */
 .reviewDiv {
-    background-color: rgb(131, 179, 221);
+    background-color: rgb(95, 160, 121);
     border-radius: 20px;
     padding: 7px;
     border: solid black 2px;
@@ -156,8 +209,21 @@ h1 a {
     background: none;
 }
 
+.reviewContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./assets/reviewsbackground.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .reviewContent  h1{
-    color: white;
+    color: rgb(95, 160, 121);
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 2px rgb(95, 160, 121);
 }
 
 /* start of add new page styling */
@@ -169,13 +235,46 @@ h1 a {
     align-items: center;
     gap: 10px;
     height: 60vh;
+    height: 90vh;
+    width: 100vw;
+    background-image: url(./assets/addbackground.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .addContent h1 {
     color: white;
+    background: black;
+    padding: 10px;
+    border: solid 2px rgb(95, 160, 121);
+    border-radius: 10px;
 }
 
 .addContent form {
     transform: scale(1.4);
 }
-/* END OF HOME PAGE STYLING */
+
+@media (min-width: 600px) {
+    .landingButtons {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    
+    .homeContainer {
+        height: 60vh;
+    }
+
+    .displayedGames {
+        width: 40vw;
+    }
+
+    .reviewDiv {
+        width: 40vw;
+    }
+
+    .reviewForm {
+        width: 25vw;
+        border: solid 2px rgb(95, 160, 121);
+    }
+}

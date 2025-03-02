@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import ReviewForm from "./ReviewForm"
 import DeleteButton from "./DeleteButton"
+import { Link } from "react-router-dom"
 
 
 export default function ReviewsPage() {
@@ -29,8 +29,10 @@ export default function ReviewsPage() {
                         <p>{item.review}</p>
                     </div>
                 ))}
+                <div className="backButton">
+                    <Link to={"/"}><button>Go Back</button></Link>
+                </div>
             </section>
-            <ReviewForm />
         </>
     )
 }

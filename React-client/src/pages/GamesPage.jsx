@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react"
 import { Link } from "react-router-dom"
-import SortByMenu from "./SortByMenu"
+// import SortByMenu from "./SortByMenu"
 
 export default function GamesPage() {
 
@@ -32,11 +32,16 @@ export default function GamesPage() {
 
     return (
         <>
-            <div className="gameContent">
-                <SortByMenu gamesArray={gamesArray}/>
-                <h1>Games</h1>
-                {gamesArray}
-            </div>
+            <section className="gameContent">
+                {/* <SortByMenu gamesArray={gamesArray}/> */}
+                <div className="gamesDiv">
+                    <h1>Games</h1>
+                    {gamesArray}
+                </div>
+                <div className="backButton">
+                    <Link to={"/"}><button>Go back</button></Link>
+                </div>
+            </section>
         </>
     )
 }
