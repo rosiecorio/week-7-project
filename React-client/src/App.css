@@ -60,7 +60,7 @@ h1 a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('./src/assets/gamesbackground.jpg');
+    background-image: url('/src/assets/gamesbackground.jpg');
 }
 
 .reviewsContainer {
@@ -70,7 +70,7 @@ h1 a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('./src/assets/reviewsbackground.avif');
+    background-image: url('/src/assets/reviewsbackground.avif');
 }
 
 .addContainer {
@@ -80,7 +80,7 @@ h1 a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('./src/assets/addbackground.webp');
+    background-image: url('/src/assets/addbackground.webp');
 }
 
 /* END OF HOME PAGE STYLING */
@@ -147,7 +147,7 @@ h1 a {
 .gameContent {
     height: 80vh;
     width: 100vw;
-    background-image: url(./assets/gamesbackground.jpg);
+    background-image: url('/assets/gamesbackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -213,7 +213,7 @@ h1 a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./assets/reviewsbackground.avif);
+    background-image: url('/assets/reviewsbackground.avif');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -237,7 +237,7 @@ h1 a {
     height: 60vh;
     height: 90vh;
     width: 100vw;
-    background-image: url(./assets/addbackground.webp);
+    background-image: url('/assets/addbackground.webp');
     background-repeat: no-repeat;
     background-size: cover;
 }
