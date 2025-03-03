@@ -2,7 +2,7 @@ export default function DeleteButton({id}) {
     
     async function handleDelete() {
         try {
-            const response = await fetch(`http://localhost:8080/games/${id}`, {
+            const response = await fetch(`https://side-quest-server.onrender.com/games/${id}`, {
                 method: "DELETE"
             })
             console.log(response)

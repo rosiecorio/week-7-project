@@ -14,7 +14,7 @@ export default function ReviewForm() {
         async function handleSubmit(event) {
             event.preventDefault()
             try {
-                const result = await fetch(`http://localhost:8080/games`, {
+                const result = await fetch(`https://side-quest-server.onrender.com/games`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

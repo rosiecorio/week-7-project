@@ -9,7 +9,7 @@ export default function EachGame() {
 
     useEffect(() => {
         async function fetchGame() {
-            const response = await fetch (`http://localhost:8080/games/${id}?include_genres=true`)
+            const response = await fetch (`https://side-quest-server.onrender.com/games/${id}?include_genres=true`)
             const data = await response.json()
             setGameInfo(data.rows[0])
         }
